@@ -85,4 +85,18 @@ public class PersonalDetails {
     public void setEmail(String email) {
         Email = email;
     }
+
+    @Override
+    public String toString() {
+        return "PersonalDetails{" +
+                "FirstName='" + FirstName + '\'' +
+                ", LastName='" + LastName + '\'' +
+                ", Address='" + Address + '\'' +
+                ", City='" + City + '\'' +
+                ", State='" + State + '\'' +
+                ", ZipCode='" + ZipCode + '\'' +
+                ", PhoneNumber='" + PhoneNumber + '\'' +
+                ", Email='" + Email + '\'' +
+                '}';
+    }
 }

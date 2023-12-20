@@ -18,22 +18,16 @@ public class AdressBook {
             System.out.println("Address Book is Empty");
         }else{
             System.out.println("Hear is the Personal Details : ");
-            for (PersonalDetails item : items) {
-//                System.out.println(items.getFirst().getFirstName()+" "+items.getFirst().getLastName());
-                System.out.println(items.getFirst().getFirstName()+" -- "+
-                                items.getFirst().getLastName()+" -- "+
-                                items.getFirst().getAddress()+" -- "+
-                                items.getFirst().getCity()+" -- "+
-                                items.getFirst().getState()+" -- "+
-                                items.getFirst().getZipCode()+" -- "+
-                                items.getFirst().getPhoneNumber()+" -- "+
-                                items.getFirst().getEmail()
-                );
+
+            for ( int i =0; i <= items.size();i++){
+                System.out.println("Contact Details are :" + i+1);
+                System.out.println(items.get(i));
+            }
             }
         }
-    }
+
     public void deletePerson(String FirstNameToDelete){
-        int n = items.removeIf(items.getFirst().getFirstName().equals(FirstNameToDelete));
+        while ()
     }
     public static void main(String[] args) {
         System.out.println("Welcome to AddressBook Program");
@@ -43,6 +37,6 @@ public class AdressBook {
         B.addNewContact(p);
         B.addNewContact(p1);
         B.displayAddedContact();
-        B.deletePerson("Patel");
+//        B.deletePerson("Patel");
     }
 }
