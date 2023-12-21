@@ -1,5 +1,6 @@
 package AdressBookSystem;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -32,11 +33,15 @@ public class AdressBook {
         }
     }
 
+    public void deleteContact(int index){
+        items.remove(index);
+    }
+
     public static void main(String[] args) {
         Scanner sysInput= new Scanner(System.in);
         System.out.println("Welcome to AddressBook Program");
-        PersonalDetails p = new PersonalDetails("Mayur","Patel","Olpad","Surat","Gujrat","123","00123456789","patelmayuraaa@gmail.com",1);
-        PersonalDetails p1 = new PersonalDetails("Patel","Mayur"," "," "," ","098","09110911091","patelmayuraaa@gmail.com2",2);
+        PersonalDetails p = new PersonalDetails("Dev","Patel","Olpad","Surat","Gujrat","123","00123456789","patelmayuraaa@gmail.com",1);
+        PersonalDetails p1 = new PersonalDetails("Jenish","Tata"," "," "," ","098","09110911091","patelmayuraaa@gmail.com2",2);
         AdressBook B =new AdressBook();
         B.addNewContact(p);
         B.addNewContact(p1);
@@ -51,6 +56,11 @@ public class AdressBook {
         System.out.println(B);
         B.displayAddedContact();
 
+        System.out.println("Enter index Number to delete");
+        int toDelete = sysInput.nextInt();
+
+        B.deleteContact(toDelete-1);
+        B.displayAddedContact();
     }
 
 }
