@@ -1,7 +1,7 @@
 package AdressBookSystem;
 
 public class PersonalDetails {
-
+    private int IndexNumber;
     private String FirstName;
     private String LastName;
     private String Address;
@@ -11,7 +11,7 @@ public class PersonalDetails {
     private String PhoneNumber;
     private String Email;
 
-    private int IndexNumber;
+
 
     public int getIndexNumber() {
         return IndexNumber;
@@ -22,6 +22,7 @@ public class PersonalDetails {
     }
 
     public PersonalDetails(String firstName, String lastName, String address, String city, String state, String zipCode, String phoneNumber, String email, int indexNumber) {
+        IndexNumber = indexNumber;
         FirstName = firstName;
         LastName = lastName;
         Address = address;
@@ -30,7 +31,7 @@ public class PersonalDetails {
         ZipCode = zipCode;
         PhoneNumber = phoneNumber;
         Email = email;
-        IndexNumber = indexNumber;
+
     }
 
     public String getFirstName() {
@@ -100,7 +101,8 @@ public class PersonalDetails {
     @Override
     public String toString() {
         return "PersonalDetails{" +
-                "FirstName='" + FirstName + '\'' +
+                "IndexNumber=" + IndexNumber +
+                ", FirstName='" + FirstName + '\'' +
                 ", LastName='" + LastName + '\'' +
                 ", Address='" + Address + '\'' +
                 ", City='" + City + '\'' +
@@ -108,7 +110,6 @@ public class PersonalDetails {
                 ", ZipCode='" + ZipCode + '\'' +
                 ", PhoneNumber='" + PhoneNumber + '\'' +
                 ", Email='" + Email + '\'' +
-                ", IndexNumber=" + IndexNumber +
                 '}';
     }
 }

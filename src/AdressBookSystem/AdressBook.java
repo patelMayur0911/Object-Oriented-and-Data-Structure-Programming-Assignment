@@ -11,22 +11,29 @@ public class AdressBook {
     }
     public void addNewContact( PersonalDetails PDItems){
         items.add(PDItems);
-//        System.out.println(PersonalDetails); // AdressBookSystem.PersonalDetails@5f184fc6
     }
     public void displayAddedContact(){
         if (items.isEmpty()){
             System.out.println("Address Book is Empty");
         }else{
-            System.out.println("Hear is the Personal Details : ");
-
-            for ( int i =0; i <= items.size();i++){
+            System.out.println("Hear is the Personal Details : \n");
+            for ( int i =0; i < items.size();i++){
                 System.out.println("Contact Details are :" + i+1);
                 System.out.println(items.get(i));
             }
+        }
+    }
+
+    public void editFirstName(String input, String output){
+        for ( PersonalDetails contact : items){
+            if (contact.getFirstName().toLowerCase().equals(input.toLowerCase())){
+                contact.setFirstName(output);
             }
         }
+    }
 
     public static void main(String[] args) {
+        Scanner sysInput= new Scanner(System.in);
         System.out.println("Welcome to AddressBook Program");
         PersonalDetails p = new PersonalDetails("Mayur","Patel","Olpad","Surat","Gujrat","123","00123456789","patelmayuraaa@gmail.com",1);
         PersonalDetails p1 = new PersonalDetails("Patel","Mayur"," "," "," ","098","09110911091","patelmayuraaa@gmail.com2",2);
@@ -34,6 +41,17 @@ public class AdressBook {
         B.addNewContact(p);
         B.addNewContact(p1);
         B.displayAddedContact();
-//        B.deletePerson("Patel");
+
+        System.out.println("Enter First Name to edit : ");
+        String inputString = sysInput.next();
+        System.out.println("Enter Name :");
+        String editString = sysInput.next();
+
+        B.editFirstName(inputString,editString);
+        System.out.println(B);
+        B.displayAddedContact();
+
     }
+
 }
+
